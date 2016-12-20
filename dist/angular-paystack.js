@@ -143,7 +143,7 @@
                                     key: options.key,
                                     email: scope.email,
                                     amount: scope.amount,
-                                    reference: scope.reference,
+                                    ref: scope.reference,
                                     metadata: scope.metadata,
                                     callback: function (response) {
                                         console.log("Payment callback received");
