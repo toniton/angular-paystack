@@ -110,10 +110,14 @@
 
         angular.module('paystack').directive('paystackPayButton', [
             '$paystack', function (paystackApi) {
-                var name = 'paystackPayButton';
                 return {
                     restrict: 'EMA',
-                    template: '<button class="paystack-pay-button {{class}}">{{text}}</button>',
+                    template: function (elem, attrs) {
+                        if(attrs.text){
+                            return '<button class="paystack-pay-button {{class}}">'+attrs.text+'</button>';
+                        }
+                        return '<button class="paystack-pay-button {{class}}">Make Payment</button>';
+                    },
                     replace: true,
                     scope: {
                         class: '@',
@@ -131,6 +135,7 @@
                         bearer: '=?'
                     },
                     link: function (scope, element, attrs) {
+                        scope.text = attrs.text || "Make Payment";
                         return paystackApi.then((function (_this) {
                             console.log("Paystack library is loaded");
                             angular.element(element).click(function () {
