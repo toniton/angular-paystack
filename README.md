@@ -8,8 +8,10 @@ Bower install angular-paystack
 ```
 ### Usage
 ```html
+<!-- The text attribute can also take custom html, but does not compile directives yet-->
 <paystack-pay-button
         class="yellow"
+        text="<small><b>Pay</b> Me Now!</small>"
         email="$scope.email"
         amount="$scope.amount"
         reference="$scope.reference"
