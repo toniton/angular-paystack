@@ -1,0 +1,36 @@
+{
+  "name": "angular-paystack",
+  "version": "0.1.0",
+  "authors": [
+    "Toniton <akinjiolatoni@gmail.com>"
+  ],
+  "description": "An angular provider for using the paystack payment gateway api",
+  "main": "./dist/angular-paystack.min.js",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "paystack",
+    "payment",
+    "gateway",
+    "provider",
+    "api"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/toniton/angular-paystack",
+  "dependencies": {
+    "angular": ">=1.2.*"
+  },
+  "ignore": [
+    "**/.*",
+    ".idea/",
+    "gulpfile.js",
+    "package.json",
+    "node_modules",
+    "build",
+    "mock",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
+}
