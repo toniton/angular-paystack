@@ -38,15 +38,15 @@ app.controller("FooController", function ($scope) {
     //The customer's email address.
     $scope.email = "johndoe@example.com";
     
-    //Amount you want to bill the customer
-    $scope.amount = "100000";
+    //Amount you want to bill the customer in kobo for NGN
+    $scope.amount = "100000"; //equals N1000
     
     //Metadata is optional
     $scope.metadata = {
         custom_fields: [
             {
-                display_name: "Mobile Number",
-                variable_name: "mobile_number",
+                display_name: "Phone Number",
+                variable_name: "phone",
                 value: "+234##########"
             }
         ]
@@ -78,6 +78,9 @@ Remember to change the key when deploying on a live system
 
 ## Credits
 * **Akinjiola Toni** *Toniton* [sails-hook-datatable](https://github.com/toniton/sails-hook-datatable)
+
+* **Kevin Constantine** *K-Constantine* [kitchen](https://github.com/K-Constantine/Kitchen)
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
