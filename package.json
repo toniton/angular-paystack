@@ -1,0 +1,29 @@
+{
+  "name": "angular-paystack",
+  "version": "1.0.1",
+  "description": "This is an angular library for implementing paystack payment gateway",
+  "main": "dist/angular-paystack.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toniton/angular-paystack.git"
+  },
+  "keywords": [
+    "Paystack",
+    "Payment",
+    "Gateway",
+    "Easy",
+    "Payment",
+    "Payment",
+    "Options",
+    "Provider"
+  ],
+  "author": "Akinjiola Toni <akinjiolatoni@gmail.com> (https://ng.linkedin.com/in/toni-akinjiola-42ba7a94)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toniton/angular-paystack/issues"
+  },
+  "homepage": "https://github.com/toniton/angular-paystack#readme"
+}
