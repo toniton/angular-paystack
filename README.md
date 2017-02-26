@@ -12,12 +12,12 @@ Bower install angular-paystack
 <paystack-pay-button
         class="yellow"
         text="<small><b>Pay</b> Me Now!</small>"
-        email="$scope.email"
-        amount="$scope.amount"
-        reference="$scope.reference"
-        metadata="$scope.metadata"
-        callback="$scope.callback"
-        close="$scope.close">
+        email="email"
+        amount="amount"
+        reference="reference"
+        metadata="metadata"
+        callback="callback"
+        close="close">
 </paystack-pay-button>
 ```
 
