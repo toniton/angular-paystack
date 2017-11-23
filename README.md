@@ -3,18 +3,28 @@ This is an angular library for implementing paystack payment gateway
 ### Get Started
 This library would help you add paystack payment gateway to your angular projects in no time. All you need to do is ...
 ### Install
+
+##### Bower
 ```
 Bower install angular-paystack
 ```
+
+##### Npm
+```
+npm install angular-paystack
+```
+
 ### Usage
 ```html
 <!-- The text attribute can also take custom html, but does not compile directives yet-->
+<!-- The beforepopup attribute is not required. But, if it's added then it must return true for the payment dialog to open-->
 <paystack-pay-button
         class="yellow"
         text="<small><b>Pay</b> Me Now!</small>"
         email="$scope.email"
         amount="$scope.amount"
         reference="$scope.reference"
+        beforepopup="$scope.beforePopUp"
         metadata="$scope.metadata"
         callback="$scope.callback"
         close="$scope.close">
@@ -50,6 +60,12 @@ app.controller("FooController", function ($scope) {
                 value: "+234##########"
             }
         ]
+    };
+
+    //Javascript function that is called before payment dialog is opened
+    $scope.beforePopUp = function () {
+        console.log("Now we can perform some task before opening the payment dialog");
+        return true;
     };
     
     //Javascript function that is called when the payment is successful
