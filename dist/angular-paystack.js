@@ -49,7 +49,6 @@
         };
         angular.module('paystack.providers').factory('paystackScriptLoader', [
             '$q', function ($q) {
-                console.log("Paystack library initialized");
                 var getScriptUrl, includeScript, isPaystackLoaded, scriptId;
                 scriptId = void 0;
                 getScriptUrl = function (options) {
@@ -124,6 +123,7 @@
                         email: '=',
                         amount: '=',
                         reference: '=',
+                        beforepopup: '=?',
                         callback: '=?',
                         metadata: '=?',
                         close: '=?',
@@ -137,8 +137,8 @@
                     link: function (scope, element, attrs) {
                         scope.text = attrs.text || "Make Payment";
                         return paystackApi.then((function (_this) {
-                            console.log("Paystack library is loaded");
                             angular.element(element).click(function () {
+                                var beforePopUp = (scope.beforepopup !== 'undefined') ? scope.beforepopup() : true;
                                 var handler = PaystackPop.setup({
                                     key: options.key,
                                     email: scope.email,
@@ -146,11 +146,9 @@
                                     ref: scope.reference,
                                     metadata: scope.metadata,
                                     callback: function (response) {
-                                        console.log("Payment callback received");
                                         scope.callback(response);
                                     },
                                     onClose: function () {
-                                        console.log("Payment dialog closed");
                                         scope.close();
                                     },
                                     currency: scope.currency,
@@ -160,7 +158,10 @@
                                     transaction_charge: scope.transaction_charge,
                                     bearer: scope.bearer
                                 });
-                                handler.openIframe();
+
+                                if (beforePopUp) {
+	                                handler.openIframe();
+                                }
                             });
                         })(this));
                     }
